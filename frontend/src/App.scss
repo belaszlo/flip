@@ -1,0 +1,728 @@
+@import 'bootstrap/scss/bootstrap.scss';
+
+@font-face {
+  font-family: "Federal";
+  src: url(/fonts/federalescort.ttf);
+  font-weight: 200;
+}
+
+:root {
+  --containerHeigh: 85vh;
+  --containerArc: 45deg;
+  --leftBox: 10%;
+  --rightBox: 53%;
+  --leftSize: 400px;
+  --disp: 95%;
+  --zIndexMiddle: 26;
+  --dColor : rgb(26, 26, 26);
+  --dBackground: rgb(239,239,239);
+  --dIconColor :rgb(239,239,239);
+  --dIconBg: rgb(239,239,239);
+  --borderD: 'none';
+  --menuSvg: rotate(-45deg);
+  --smallDisplay: flex;
+  --smallBoxBg: rgb(26,26,26);
+}
+
+* {
+  transition: 0.2s all;
+  transition-timing-function: ease-in-out;
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+
+#root {
+  min-height: 100.1vh;
+  background: rgb(245, 252, 251);
+}
+
+.container {
+  color: rgb(31, 31, 31);
+  height: var(--containerHeigh);
+  opacity: 95%;
+  border-radius: 5px;
+  transform: rotate(0deg);
+  z-index: 500;
+  position: relative;
+}
+
+.mainTitle {
+  margin-left: 4px !important;
+  font-weight: 500;
+}
+
+
+.containerDefault {
+  width: 1300px;
+  z-index: 600;
+  position: absolute;
+  display: flex;
+  height: auto;
+  padding-top: 30vh;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  opacity: var(--disp);
+  justify-content: center;
+  min-height: 600px;
+}
+
+.firstBox {
+  background: none;
+  border: solid 6px rgb(32,32,32);
+  z-index: 20;
+  width: var(--leftSize);
+  height: var(--leftSize);
+  position: absolute;
+  transform: rotate(var(--containerArc));
+  left: var(--leftBox);
+  margin-left: 2vw;
+  animation-name: swipein;
+  animation-delay: 0s;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  background-color: rgb(252, 252, 252);
+}
+
+
+.firstBox:hover div{
+  font-size: 84px;
+  opacity: 100%;
+}
+
+.secondBox {
+  background: rgb(33,33,33);
+  z-index: 22;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  transform: rotate(var(--containerArc));
+  left: 31.5%;
+  margin-left: 2vw;
+  cursor: pointer;
+  box-sizing: border-box;
+  opacity: 100%;
+}
+
+
+.thirdBox {
+  background: none;
+  border: solid 6px rgb(32,32,32);
+  // border-image: linear-gradient(#292929, #9a9a9a) 30;
+  z-index: 20;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  rotate: (var(--containerArc));
+  left: var(--rightBox);
+  margin-left: 2vw;
+  animation-name: swipeon;
+  animation-delay: 0s;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  background-color: rgb(252, 252, 252);
+
+}
+
+
+.thirdBox:hover div{
+  font-size: 84px;
+  opacity: 100%;
+}
+
+.smallBox {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  box-sizing: border-box;
+  background-color: var(--smallBoxBg);
+}
+
+
+.smallBoxContainer  {
+  z-index: var(--zIndexMiddle);
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  transform: rotate(var(--containerArc));
+  left: 31.5%;
+  margin-left: 2vw;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.smallBoxContainer:hover {
+  // box-shadow: 6px 2px 24px 16px rgba(22,105,93,0.75);
+  
+}
+
+.smallBoxContainer:hover div{
+  border-color:  rgba(239,239,239);
+  
+}
+
+.smallBox:hover {
+  background-color:  rgba(22,105,93,0.99);
+}
+
+
+.boxMenu {
+  transform: rotate(-44deg);
+  padding: 124px;
+  padding-left: 40px;
+  font-size: 0px;
+  line-height: 100px;
+  font-weight: 900;
+  color: rgb(239, 239, 239);
+  display: none
+}
+
+.thirdBox :first-child {
+  padding-left: 112px;
+}
+
+.firstBox :first-child {
+  padding-left: 20px;
+}
+
+.secondSmall {
+  border-top: solid 2.5px rgb(239, 239, 239);
+  border-left: solid 2.5px rgb(239, 239, 239);
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.thirdSmall {
+  border-top: solid 2.5px rgb(239, 239, 239);
+  border-right: solid 2.5px #efefef;
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+.menuSvg {
+  color: rgb(239, 239, 239);
+  transform: var(--menuSvg);
+  opacity: 100%;
+  top: 10%;
+  left: 23%;
+  position: relative;
+  opacity: 5%;
+  animation-name: boxmenu;
+  animation-delay: 0s;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+.smallBox:hover div {
+  opacity: 100%;
+}
+
+
+.forthSmall {
+  border-bottom: solid 2.5px rgb(239, 239, 239);
+  border-left: solid 2.5px rgb(239, 239, 239);
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.firstSmall {
+    border-bottom: solid 2.5px rgb(239, 239, 239);
+    border-right: solid 2.5px rgb(239, 239, 239);
+    font-size: 48px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.compete {
+  font-weight: 800;
+  cursor: pointer!important;
+}
+
+.gameIcons {
+  position: relative;
+  cursor: pointer;
+}
+
+.gameIcons div{
+  left: 50%; /* relative to nearest positioned ancestor or body element */
+  top: 50%; /*  relative to nearest positioned ancestor or body element */
+  transform: translate(-50%, -50%); /* relative to element's height & width */
+  position: absolute;
+  color: rgb(239,239,239);
+  font-family: 'Federal';
+}
+
+#dIcon {
+  background: var(--dIconBg);
+  // border-bottom: (--borderD);
+}
+
+#dIcon div {
+  color: var(--dIconColor);
+  border: 2.5px (rgb(36, 36, 36));
+}
+
+
+.dynamicBackground {
+  height: 99.9vh;
+  width: 99.35vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 0px;
+  margin-top: 0px;
+  // animation-name: backgroundswap;
+  // animation-delay: 0s;
+  // animation-duration: 0.7s;
+  // animation-fill-mode: forwards;
+}
+
+#dynamicBackground {
+  animation-name: unset;
+
+}
+
+
+.aboutTitle {
+  font-size: 64px;
+  font-family: 'Federal';
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-top: -40px;
+}
+
+.about {
+  border-top: solid 3px;
+  border-right: solid 3px;
+  border-image: linear-gradient(to right, rgb(255, 255, 255, 0) 25%, rgb(26, 26, 26) 25%, rgb(26, 26, 26) 99.7%, ) 1;
+  margin-top: 200px;
+  height: auto;
+  width: 1260px;
+  overflow: unset;
+  animation-name: showborder;
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  margin-bottom: 400px;
+}
+
+.aboutContainers {
+  border-top: solid 3px;
+  border-right: solid 3px;
+  border-image: linear-gradient(to right, rgb(26,26,26) 0%, rgb(26, 26, 26) 40.6%, rgb(255, 255, 255, 0) 40.7%, ) 1;
+  margin-top: 200px;
+  height: auto;
+  width: 1240px;
+  overflow: unset;
+  animation-name: showhomebox;
+  animation-delay: 0s;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+.aboutContainers h1 {
+  text-align: right;
+  
+}
+
+.aboutContainers div {
+  text-align: left;
+  
+}
+
+
+
+.aboutInfo {
+  font-family: 'Roboto';
+  font-size: 28px;
+  font-weight: 200;
+  margin-top: 200px;
+  text-align: right;
+  margin-right: 20px;
+  animation-name: showhomebox;
+  animation-delay: 0s;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.homeBox {
+  animation-name: showhomebox;
+  animation-delay: 0s;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+}
+
+.menuTitle {
+  width: 45%;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+
+
+.gameBoxLeft {
+  border: solid 2px black;
+  height: 400px;
+  width: 430px;
+  position: relative;
+  animation-name: openplay;
+  animation-delay: 0s;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.gameBoxRight {
+  border: solid 2px black;
+  height: 400px;
+  width: 430px;
+  animation-name: openplay;
+  animation-delay: 0s;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+.gameBoxMid {
+  height: 400px;
+  width: 400px;
+  background-color: rgb(239,239,239);
+}
+
+.flexRow {
+  display: flex;
+  position: relative;
+}
+
+
+.smallGameBox {
+  width: 200px;
+  height: 200px;
+};
+
+.answer {
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+  animation-name: showhomebox;
+  animation-delay: 0s;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.answer div {
+  left: 50%; /* relative to nearest positioned ancestor or body element */
+  top: 50%; /*  relative to nearest positioned ancestor or body element */
+  transform: translate(-50%, -50%); /* relative to element's height & width */
+  position: absolute;
+  width: 80%;
+  padding: 10px;
+}
+
+.dAnswer {
+  background-color: var(--dBackground);
+  color: var(--dColor);
+  border-radius: 4px
+}
+
+.topAnswer {
+  border-bottom: solid 2.5px;
+  border-right: solid 2.5px;
+  border-image: linear-gradient(to right, rgb(255, 255, 255, 0) 0%, rgb(255, 255, 255, 0) 20%,  rgb(26, 26, 26) 20.1%, rgb(26, 26, 26) 80%, rgb(255, 255, 255, 0) 80.1%, ) 1;
+}
+
+
+.quizAnswers {
+  width: 300px;
+  height: 300px;
+  border: solid black 0.5px;
+  animation-name: answers;
+  animation-delay: 0s;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  position: relative;
+  cursor: pointer;
+  background-color: rgb(252, 252, 252);
+  box-shadow: 0px 2px 24px 2px rgba(196, 226, 226, 0.75);
+}
+
+.quizAnswers div {
+  left: 50%; /* relative to nearest positioned ancestor or body element */
+  top: 50%; /*  relative to nearest positioned ancestor or body element */
+  transform: translate(-50%, -50%); /* relative to element's height & width */
+  width: 80%;
+  padding: 10px;
+  font-weight: 600px;
+  font-size: 32px;
+  position: absolute;
+  text-align: center;
+  
+}
+
+.quizAnswers:hover {
+  // border: solid 6px rgb(239, 239, 239);
+  opacity: 95%;
+  box-shadow: 4px 2px 24px 6px rgba(115, 173, 164, 0.99);
+  // -webkit-box-shadow: 6px 2px 24px 16px rgba(22,105,93,0.99);
+  // -moz-box-shadow: 6px 2px 24px 16px rgba(22,105,93,0.99);
+}
+
+.quizAnswers:hover div{
+  font-size: 48px;
+}
+
+.containerAnswers {
+  display: flex;
+  width: 1240px;
+  justify-content: space-between;
+  height: 300px;
+  margin: auto;
+  padding: 20px;
+}
+
+
+.answersWrapper {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  margin: auto;
+  top: 60%;
+}
+
+.containerQuestions {
+  position: absolute;
+  width: 1280px;
+  margin: auto;
+  left: 50%; /* relative to nearest positioned ancestor or body element */
+  top: 30%; /*  relative to nearest positioned ancestor or body element */
+  transform: translate(-50%, -50%); /* relative to element's height & width */
+  position: absolute;
+}
+
+@media screen and (max-width: 1920px) {
+  .menuContainer {
+    transform: scale(0.8);
+  }
+  .quizAnswers {
+    transform: scale(0.8);
+  }
+
+}
+
+.playTitle {
+  font-family: 'Federal';
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .about {
+    width: 86%;
+    border-image: linear-gradient(to right, rgb(255, 255, 255, 0) 60%, rgb(26, 26, 26) 60%, rgb(26, 26, 26) 99.7%, ) 1;
+    animation-name: none;
+  }
+  .aboutTitle {
+    font-size: 36px;
+    margin-top: -20px;
+  }
+  .aboutInfo {
+    font-size: 20px;
+  }
+  .aboutContainers {
+    width: 86%;
+    border-image: linear-gradient(to right, rgb(26,26,26) 0%, rgb(26, 26, 26) 40.6%, rgb(255, 255, 255, 0) 40.7%, ) 1;
+  }
+
+  .thirdBox {
+    display: none;
+  }
+  .firstBox {
+    display: none;
+  }
+  .secondBox {
+    display: none;
+  }
+  .smallBoxContainer {
+    width: 115px;
+    height: 115px;
+  }
+  .smallBox {
+    width: 115px;
+    height: 115px;
+  }
+  .containerDefault {
+    width: 95%;
+    overflow: hidden;
+  }
+  .menuSvg {
+    top: -5%;
+    left: 23%;
+  }
+  .dynamicBackground {
+    display: none;
+  }
+
+}
+
+
+
+
+@keyframes swipein {
+  0% {left: 50%;
+    width: 500px;
+    height: 500px;
+    // box-shadow: 6px 2px 24px 16px rgba(22,105,93,0.75);
+  //  -webkit-box-shadow: 6px 2px 24px 16px rgba(22,105,93,0.75);
+  //  -moz-box-shadow: 6px 2px 24px 16px rgba(22,105,93,0.75);
+  //   background: linear-gradient(135deg, rgba(32,32,32,1) 0%, rgba(32,32,32,1) 50%, rgba(22,105,93,0.75) 50.4%, rgba(32,32,32,11) 100%); 
+  }
+
+  66% {
+    left: 38%;
+    width: 200px;
+    height: 200px;
+ 
+  }
+  
+  100% {
+    left: 10%;
+    width: 400px;
+    height: 400px;
+    
+  }
+  
+}
+
+@keyframes swipeon {
+  0% {left: 13%;
+    width: 400px;
+    height: 400px;
+
+  }
+
+  66% {
+    left: 38%;
+    width: 500px;
+    height: 500px;
+  }
+  
+  100% {
+    left: 53%;
+    width: 400px;
+    height: 400px;
+  }
+  
+}
+
+@keyframes showhomebox {
+  0%{
+    opacity: 0;
+
+  }
+
+  88% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 100;
+  }
+  
+}
+
+@keyframes backgroundswap {
+
+
+  0%{
+    margin-left: -400px;
+
+  }
+  
+  100% {
+   margin-left: 0px;
+  }
+}
+
+@keyframes answers {
+
+
+  0%{
+    margin-top: -200px;
+    width: 200px;
+    height: 200px;
+
+  }
+  
+  100% {
+    width: 240px;
+    height: 240px;
+    margin-top: 0px;
+  }
+}
+
+@keyframes boxmenu {
+  0%{
+    z-index: 6;
+
+  }
+
+  88% {
+    z-index: 6;
+    
+  }
+  
+  100% {
+    z-index: 6;
+  }
+  
+}
+
+@keyframes openplay {
+  0%{
+    width: 0px;
+
+  }
+  
+  100% {
+   width: 420px;
+  }
+  
+}
+
+@keyframes showborder {
+0%{
+  width: 820px;
+  border-image: linear-gradient(to right, rgb(255, 255, 255, 0) 50%, rgb(26, 26, 26) 50.5%, rgb(26, 26, 26) 98.7%, rgb(255, 255, 255, 0) 98.8%,) 1;
+
+
+  }
+
+  50% {
+    width: 640px;
+    border-image: linear-gradient(to right, rgb(255, 255, 255, 0) 50%, rgb(26, 26, 26) 50.5%, rgb(26, 26, 26) 98.7%, rgb(255, 255, 255, 0) 98.8%,) 1;
+  }
+
+  90% {
+  }
+  
+  100% {
+   width: 1260px;
+   border-image: linear-gradient(to right, rgb(255, 255, 255, 0) 25%, rgb(26, 26, 26) 25%, rgb(26, 26, 26) 99.7%, ) 1;
+   padding-left: 0px;
+  }
+  
+}

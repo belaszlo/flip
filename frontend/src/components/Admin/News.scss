@@ -1,0 +1,46 @@
+#addArticleForm {
+    width: 400px;
+}
+
+#addArticleForm label {
+    color: rgb(29, 142, 29);
+}
+
+#addArticleForm .text-center {
+    display: grid;
+
+}
+
+.admin-article h1 {
+    color: rgb(109, 109, 109);
+}
+
+.article-list {
+    padding: 20px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
+    height: fit-content;
+    margin-top: 25px;
+}
+
+.admin-article .card-body button {
+    color: rgb(251, 195, 74);
+}
+
+@media screen and (min-width: 768px) {
+    .admin-cards {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 20px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .admin-article {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 20px;
+    }
+}

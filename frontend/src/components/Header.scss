@@ -1,0 +1,102 @@
+.nav-container {
+  background: none;
+
+  .nav-link {
+    border-color: rgb(44, 44, 44);
+    color: rgb(252, 252, 252);
+    background-color: rgb(44,44,44);
+  }
+  
+  .nav-link:hover {
+    // background-color: rgb(252, 252, 252);
+    color: rgb(252, 252, 252);
+    box-shadow: 0px 0px 5px 1px rgb(252, 252, 252);
+    background-color: rgb(44,44,44);
+  }
+  
+  #nav-list {
+    .nav-link.active {
+      background-color: rgb(44,44,44);
+      color: rgb(252, 252, 252);
+      box-shadow: 0px 0px 5px 1px rgb(252, 252, 252);
+    }
+  
+    .logout.active {
+      border-color: rgb(44, 44, 44);
+    }
+  }
+  
+  img {
+    width: 180px;
+  }
+  
+  .navbar-brand {
+    color: rgb(252, 252, 252);
+
+    span {
+      color: rgb(44, 44, 44);
+    }
+  }
+  
+  .navbar-brand:hover {
+    color: rgb(252, 252, 252);
+  }
+  
+  .navbar-brand:visited {
+    color: rgb(252, 252, 252);
+  }
+}
+
+.dropdown-toggle{
+  color: rgb(235, 113, 0);
+  background-color: white;
+  border: none;
+  border: solid 1px rgb(214, 214, 214);
+  border-radius: 7px;
+  font-weight: 450;
+  padding: 7.7px;
+  margin-top: 0.3px;
+  font-size: var(--bs-nav-link-font-size);
+}
+
+#dropDownButton:hover{
+  background-color: rgb(251, 227, 204);
+}
+
+#navbarNav {
+  background: linear-gradient(180deg, rgba(239, 239, 239, 0) 0%, rgba(239, 239, 239, 0) 48%, rgb(0, 0, 0) 52%, rgb(0, 0, 0), rgba(239, 239, 239, 0) 52%, rgba(239, 239, 239, 0) 100%);
+}
+
+.navBackground {
+  // background: linear-gradient(125deg, rgb(88, 147, 138)  0%, rgb(239,239,239) 60%)!important;
+  // background: linear-gradient(180deg, rgb(98,154,145) 0%, rgb(107,161,152) 100%)!important;
+}
+
+.nav-container {
+  border-radius: 0px 0px 40px 10px;
+}
+
+#logoLink {
+  font-family: 'Federal';
+  color:rgb(44, 44, 44);
+  font-size: 28px;
+}
+
+#logoLink:hover {
+  color: rgb(252, 252, 252)
+  
+}
+
+
+@media screen and (max-width: 1920px) {
+  .navBackground {
+    background: linear-gradient(180deg, rgb(98,154,145) 0%, rgb(112,164,156) 100%)!important;
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  #dropDownButton{ width: 100%;}
+  .dropdown-menu { width: 100%; text-align: center;}
+  #navbarNav {background: unset;}
+}
